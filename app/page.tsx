@@ -2,10 +2,10 @@ import Image from "next/image";
 import Section from "@/components/Section";
 import HeroSection from "@/components/Hero";
 import Project from "@/components/Project";
-import { projects } from "./models/project";
+import { projects } from "../models/project";
 import Anchor from "@/components/Anchor";
 import Contact from "@/components/Contact";
-import { icons } from "./data/icons";
+import { icons } from "../data/icons";
 
 export default function Home() {
 	return (
