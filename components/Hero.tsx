@@ -57,14 +57,14 @@ export default function HeroSection() {
 					initial={{ opacity: 0, transform: "translateY(20px)" }}
 					animate={{ opacity: 1, transform: "translateY(0)" }}
 					transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-					className="text-4xl sm:text-5xl lg:text-7xl font-semibold py-1 mb-6 sm:mb-10 lg:mb-6 text-center drop-shadow-xl drop-shadow-amber-700/20"
+					className="text-5xl sm:text-5xl lg:text-7xl font-semibold py-1 mb-2 sm:mb-6 text-center drop-shadow-xl drop-shadow-amber-700/20"
 				>
 					Building the web with
 				</motion.h1>
 
 				<motion.ul
 					key={"Precision"}
-					className=" gap-2 sm:gap-4 flex flex-col lg:h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
+					className=" gap-2 sm:gap-4 flex flex-col h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
 				>
 					{dynamicContentText
 						.filter((text, index) => {
