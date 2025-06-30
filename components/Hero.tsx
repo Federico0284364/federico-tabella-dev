@@ -8,7 +8,7 @@ import AnimatedPerformanceText from "./AnimatedPerformanceText";
 import { setDelay as delay } from "@/utils/functions";
 import { twMerge } from "tailwind-merge";
 
-const dynamicTextClass = "text-xl sm:text-3xl lg:text-5xl bg-gradient-to-b from-primary to-dark text-shadow-xl text-shadow-amber-500";
+const dynamicTextClass = "text-xl sm:text-3xl lg:text-4xl bg-gradient-to-b from-primary to-dark text-shadow-xl text-shadow-amber-500";
 const dynamicContentText = ["Performance", "Precision", "Purpose", "extra"];
 const dynamicContent = [
 	<AnimatedPerformanceText text="Performance" textClass={dynamicTextClass} />,
@@ -41,9 +41,9 @@ export default function HeroSection() {
 			setContentNumber((prev) =>
 				prev >= dynamicContent.length - 2 ? prev : prev + 1
 			);
-		}, 900);
+		}, 800);
 
-		await delay((dynamicContent.length - 1) * 800 + 200);
+		await delay((dynamicContent.length - 1) * 800 + 1500);
 		setContentNumber((prev) => prev + 1);
 	}
 
@@ -60,9 +60,10 @@ export default function HeroSection() {
 					Building the web with
 				</motion.h1>
 
-				<ul
+				<motion.ul
+				
 					key={"Precision"}
-					className=" flex flex-col h-50 lg:h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
+					className=" gap-4 flex flex-col h-50 lg:h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
 				>
 					{dynamicContentText
 						.filter((text, index) => {
@@ -70,12 +71,12 @@ export default function HeroSection() {
 						})
 						.map((a, index) => {
 							return (
-								<li className="h-1/3 ">
+								<li className="">
 									{dynamicContent[index]}
 								</li>
 							);
 						})}
-				</ul>
+				</motion.ul>
 				</div>
 			
 		</Section>
