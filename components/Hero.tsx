@@ -8,18 +8,20 @@ import AnimatedPerformanceText from "./AnimatedPerformanceText";
 import { setDelay as delay } from "@/utils/functions";
 import { twMerge } from "tailwind-merge";
 
-const dynamicTextClass = "text-xl sm:text-3xl lg:text-4xl bg-gradient-to-b from-primary to-dark text-shadow-xl text-shadow-amber-500";
+const dynamicTextClass =
+	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary/70 from-dark/0 text-shadow";
 const dynamicContentText = ["Performance", "Precision", "Purpose", "extra"];
 const dynamicContent = [
 	<AnimatedPerformanceText text="Performance" textClass={dynamicTextClass} />,
 	<AnimatedPurposeText text="Purpose" textClass={dynamicTextClass} />,
 	<AnimatedPrecisionText text="Precision" textClass={dynamicTextClass} />,
 	<motion.p
-		className="text-sm lg:text-lg"
+		className="inline-block text-sm lg:text-lg p-0.5 rounded bottom-0 sm:bottom-5 relative"
 		initial={{ y: 200, opacity: 0 }}
 		animate={{ y: 0, opacity: 1 }}
 	>
-		...while having fun!
+		<span className="absolute inset-0 bg-amber-500/50 blur-xl rounded-full opacity-20" />
+		<span className="whitespace-nowrap">...while having fun!</span>
 	</motion.p>,
 ];
 const dynamicContentIta = ["Prestazioni", "Precisione", "Intenzione"];
@@ -50,20 +52,19 @@ export default function HeroSection() {
 	return (
 		<Section>
 			<div className="flex flex-col flex-wrap gap-x-3 items-center relative">
-				<div className="h-80 lg:h-97 rounded-full bg-transparent aspect-square shadow-lg shadow-amber-300  absolute z-[-10]"/>
+				<div className="h-80 lg:h-97 rounded-full bg-transparent aspect-square shadow-lg shadow-amber-300  absolute z-[-10]" />
 				<motion.h1
 					initial={{ opacity: 0, transform: "translateY(20px)" }}
-					animate={{ opacity: 1, transform: "translateY(0)"}}
+					animate={{ opacity: 1, transform: "translateY(0)" }}
 					transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-					className="text-5xl lg:text-7xl font-semibold py-1 mb-6 sm:mb-10 text-center drop-shadow-xl drop-shadow-blue-700/50"
+					className="text-4xl sm:text-5xl lg:text-7xl font-semibold py-1 mb-6 sm:mb-10 lg:mb-6 text-center drop-shadow-xl drop-shadow-amber-700/20"
 				>
 					Building the web with
 				</motion.h1>
 
 				<motion.ul
-				
 					key={"Precision"}
-					className=" gap-4 flex flex-col h-50 lg:h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
+					className=" gap-2 sm:gap-4 flex flex-col lg:h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
 				>
 					{dynamicContentText
 						.filter((text, index) => {
@@ -71,14 +72,11 @@ export default function HeroSection() {
 						})
 						.map((a, index) => {
 							return (
-								<li className="">
-									{dynamicContent[index]}
-								</li>
+								<li className="drop-shadow-2xl drop-shadow-amber-500/1">{dynamicContent[index]}</li>
 							);
 						})}
 				</motion.ul>
-				</div>
-			
+			</div>
 		</Section>
 	);
 }

@@ -27,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={"flex flex-col items-center text-fg scroll-smooth"}
+      
+        className={"flex flex-col items-center text-fg scroll-smooth " }
       >
         <Header />
         <main className="flex flex-col w-[87vw] max-w-215 gap-4 mt-10">
