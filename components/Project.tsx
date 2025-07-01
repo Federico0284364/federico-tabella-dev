@@ -19,7 +19,7 @@ export default function ProjectContainer({ project }: Props) {
 			href={project.link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="hover:bg-light transition p-4 md:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center gap-x-8"
+			className="backdrop-blur-lg bg-medium border-1 md:border-0 border-fg/20 hover:bg-light transition p-4 md:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center gap-x-8"
 		>
 			<Image
 				className="rounded-xl aspect[16/9]"
