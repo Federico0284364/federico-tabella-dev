@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import type { Technology } from "@/app/models/technology";
+import type { Technology } from "@/models/technology";
 
 type Props = {
 	technology: Technology;

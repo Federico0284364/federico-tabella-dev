@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import { getTechnologyByName, Project } from "@/app/models/project";
+import { getTechnologyByName, Project } from "@/models/project";
 import TechnologyTag from "./Technology";
-import { technologies } from "@/app/models/technology";
+import { technologies } from "@/models/technology";
 import { AnimatePresence, easeOut, motion } from "framer-motion";
 
 type Props = {

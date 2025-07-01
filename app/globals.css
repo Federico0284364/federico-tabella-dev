@@ -12,11 +12,11 @@ html{
 
 @layer base {
   :root {
-    --bg-dark: hsl(0, 0%, 9%);
+    --bg-dark: hsl(0, 0%, 11%);
     --bg: hsl(0, 0%, 13%);
     --bg-light: hsl(0, 0%, 16%);
     --text: hsl(212 100% 97%);
-    --text-muted: hsl(213, 50%, 82%);
+    --text-muted: hsl(212, 47%, 85%);
     --highlight: hsl(211, 60%, 69%);
     --border: hsl(212 37% 29%);
     --border-muted: hsl(211 56% 19%);
@@ -55,4 +55,8 @@ body{
   background-color: var(--bg-dark);
   padding: 16px;
 
+}
+
+.text-shadow{
+   text-shadow: 0px 6px 7px var(--bg-light);
 }

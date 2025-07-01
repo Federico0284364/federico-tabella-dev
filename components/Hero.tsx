@@ -1,61 +1,76 @@
 "use client";
 import Section from "./Section";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPurposeText from "./AnimatedPurposeText";
 import AnimatedPrecisionText from "./AnimatedPrecisionText";
 import AnimatedPerformanceText from "./AnimatedPerformanceText";
+import { setDelay as delay } from "@/utils/functions";
+import { twMerge } from "tailwind-merge";
 
+const dynamicTextClass =
+	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary/70 from-dark/0 text-shadow";
 const dynamicContentText = ["Performance", "Precision", "Purpose", "extra"];
 const dynamicContent = [
-	<AnimatedPerformanceText text="Performance" />,
-	<AnimatedPurposeText text="Purpose" />,
-	<AnimatedPrecisionText text="Precision" />,
+	<AnimatedPerformanceText text="Performance" textClass={dynamicTextClass} />,
+	<AnimatedPurposeText text="Purpose" textClass={dynamicTextClass} />,
+	<AnimatedPrecisionText text="Precision" textClass={dynamicTextClass} />,
 	<motion.p
-		className="text-sm"
+		className="inline-block text-sm lg:text-lg p-0.5 rounded bottom-0 sm:bottom-5 relative"
 		initial={{ y: 200, opacity: 0 }}
 		animate={{ y: 0, opacity: 1 }}
 	>
-		while having fun
+		<span className="absolute inset-0 bg-amber-500/50 blur-xl rounded-full opacity-20" />
+		<span className="whitespace-nowrap">...while having fun!</span>
 	</motion.p>,
 ];
 const dynamicContentIta = ["Prestazioni", "Precisione", "Intenzione"];
 
-let interval: any;
-
 export default function HeroSection() {
-	const [contentNumber, setContentNumber] = useState<number>(0);
+	const [contentNumber, setContentNumber] = useState<number>(-1);
+	const intervalRef = useRef<null | number>(null)
 
 	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setContentNumber((prev) => prev + 1);
-		}, (dynamicContent.length - 1) * 800);
+		sequence();
 
-		return () => clearTimeout(timeout);
-	});
+		return () => {
+  if (intervalRef.current !== null) {
+		console.log("Cleanup called, interval id:", intervalRef.current);
+    clearInterval(intervalRef.current);
+  }
+};
+	}, []);
 
-	useEffect(() => {
-		if (contentNumber >= dynamicContent.length - 2) return;
+	async function sequence() {
+		await delay(200);
 
-		const interval = setInterval(() => {
+		intervalRef.current = window.setInterval(() => {
+			console.log('interval');
 			setContentNumber((prev) =>
-				prev >= dynamicContent.length - 1 ? prev : prev + 1
+				prev >= dynamicContent.length - 2 ? prev : prev + 1
 			);
-		}, 900);
+		}, 800);
 
-		return () => clearInterval(interval);
-	}, [contentNumber]);
+		await delay((dynamicContent.length - 1) * 800 + 1500);
+		setContentNumber((prev) => prev + 1);
+	}
 
 	return (
 		<Section>
-			<div className="flex flex-col flex-wrap gap-x-3 items-center">
-				<h1 className="text-5xl lg:text-7xl font-semibold py-1 mb-3 text-center ">
+			<div className="flex flex-col flex-wrap gap-x-3 items-center relative">
+				<div className="h-80 lg:h-97 rounded-full bg-transparent aspect-square shadow-lg shadow-amber-300  absolute z-[-10]" />
+				<motion.h1
+					initial={{ opacity: 0, transform: "translateY(20px)" }}
+					animate={{ opacity: 1, transform: "translateY(0)" }}
+					transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
+					className="text-5xl sm:text-5xl lg:text-7xl font-semibold py-1 mb-2 sm:mb-6 text-center drop-shadow-xl drop-shadow-amber-700/20"
+				>
 					Building the web with
-				</h1>
+				</motion.h1>
 
-				<ul
+				<motion.ul
 					key={"Precision"}
-					className=" h-50 lg:h-60 mt-2 sm:mt-0 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg overflow-visible"
+					className=" gap-2 sm:gap-4 flex flex-col h-60 font-semibold text-3xl lg:text-5xl font py-1 rounded-lg items-center overflow-visible"
 				>
 					{dynamicContentText
 						.filter((text, index) => {
@@ -63,12 +78,10 @@ export default function HeroSection() {
 						})
 						.map((a, index) => {
 							return (
-								<li className="h-1/3 ">
-									{dynamicContent[index]}
-								</li>
+								<li className="drop-shadow-2xl drop-shadow-amber-500/1">{dynamicContent[index]}</li>
 							);
 						})}
-				</ul>
+				</motion.ul>
 			</div>
 		</Section>
 	);
