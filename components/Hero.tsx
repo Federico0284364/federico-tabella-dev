@@ -1,6 +1,6 @@
 "use client";
 import Section from "./Section";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedPurposeText from "./AnimatedPurposeText";
 import AnimatedPrecisionText from "./AnimatedPrecisionText";
@@ -28,18 +28,24 @@ const dynamicContentIta = ["Prestazioni", "Precisione", "Intenzione"];
 
 export default function HeroSection() {
 	const [contentNumber, setContentNumber] = useState<number>(-1);
-	let interval: any;
+	const intervalRef = useRef<null | number>(null)
 
 	useEffect(() => {
 		sequence();
 
-		return () => clearInterval(interval);
+		return () => {
+  if (intervalRef.current !== null) {
+		console.log("Cleanup called, interval id:", intervalRef.current);
+    clearInterval(intervalRef.current);
+  }
+};
 	}, []);
 
 	async function sequence() {
 		await delay(200);
 
-		interval = setInterval(() => {
+		intervalRef.current = window.setInterval(() => {
+			console.log('interval');
 			setContentNumber((prev) =>
 				prev >= dynamicContent.length - 2 ? prev : prev + 1
 			);

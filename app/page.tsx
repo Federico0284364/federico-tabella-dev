@@ -33,8 +33,38 @@ export default function Home() {
 							tabella.federico@gmail.com
 						</Contact>
 					</li>
+					
 				</ul>
 			</Section>
+			<footer className="flex justify-between text-fg-muted h-20">
+				<p>Federico Tabella</p>
+				<ul className="flex gap-2 h-full">
+					<li>
+						<Anchor
+							target="_blank"
+							href="mailto:tabella.federico@gmail.com"
+						>
+							{icons.mail}
+						</Anchor>
+					</li>
+					<li>
+						<Anchor
+							target="_blank"
+							href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
+						>
+							{icons.linkedin}
+						</Anchor>
+						<li></li>
+						
+					</li>
+					<Anchor
+							target="_blank"
+							href="https://github.com/Federico0284364"
+						>
+							{icons.github}
+						</Anchor>
+				</ul>
+			</footer>
 		</>
 	);
 }
