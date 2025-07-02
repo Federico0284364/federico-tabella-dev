@@ -5,12 +5,18 @@ import Project from "@/components/Project";
 import { projects } from "../models/project";
 import Anchor from "@/components/Anchor";
 import Contact from "@/components/Contact";
-import { icons } from "../data/icons";
+import { contactIcons } from "../data/contact-icons";
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import SkillsSection from "@/components/SkillsSection";
 
 export default function Home() {
 	return (
 		<>
 			<HeroSection />
+
+			<SkillsSection />
+
 			<Section title="Projects">
 				<ul className="flex flex-col gap-8">
 					{projects.map((project) => {
@@ -22,48 +28,45 @@ export default function Home() {
 					})}
 				</ul>
 			</Section>
+
 			<Section title="Contact me">
 				<ul>
 					<li>
 						<Contact
 							className="text-xl text-fg-muted h-8"
-							icon={icons.mail}
+							icon={contactIcons.mail}
 							href="mailto:tabella.federico@gmail.com"
 						>
 							tabella.federico@gmail.com
 						</Contact>
 					</li>
-					
 				</ul>
 			</Section>
-			<footer className="flex justify-between text-fg-muted h-20">
-				<p>Federico Tabella</p>
-				<ul className="flex gap-2 h-full">
-					<li>
-						<Anchor
-							target="_blank"
-							href="mailto:tabella.federico@gmail.com"
-						>
-							{icons.mail}
-						</Anchor>
-					</li>
-					<li>
-						<Anchor
-							target="_blank"
-							href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
-						>
-							{icons.linkedin}
-						</Anchor>
-						<li></li>
-						
-					</li>
+
+			<footer className="flex justify-between text-fg-muted items-center h-15">
+				<p>©{new Date().getFullYear()} Federico Tabella</p>
+				<div className="flex gap-2 h-8">
 					<Anchor
-							target="_blank"
-							href="https://github.com/Federico0284364"
-						>
-							{icons.github}
-						</Anchor>
-				</ul>
+						target="_blank"
+						href="mailto:tabella.federico@gmail.com"
+					>
+						{contactIcons.mail}
+					</Anchor>
+
+					<Anchor
+						target="_blank"
+						href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
+					>
+						{contactIcons.linkedin}
+					</Anchor>
+
+					<Anchor
+						target="_blank"
+						href="https://github.com/Federico0284364"
+					>
+						{contactIcons.github}
+					</Anchor>
+				</div>
 			</footer>
 		</>
 	);

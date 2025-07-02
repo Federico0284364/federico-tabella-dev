@@ -10,6 +10,11 @@ html{
   padding: 0;
 }
 
+
+button{
+  cursor: pointer;
+}
+
 @layer base {
   :root {
     --bg-dark: hsl(0, 0%, 11%);
@@ -22,6 +27,7 @@ html{
     --border-muted: hsl(211 56% 19%);
     --primary: hsl(212, 54%, 22%);
     --secondary: hsl(34 60% 63%);
+    --important: hsl(39, 81, 129);
     --danger: hsl(9 31% 65%);
     --warning: hsl(52 22% 56%);
     --success: hsl(147 21% 58%);
@@ -45,6 +51,7 @@ html{
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-important: var(--important);
   --color-danger: var(--danger);
   --color-warning: var(--warning);
   --color-success: var(--success);

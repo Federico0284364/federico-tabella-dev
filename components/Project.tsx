@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { getTechnologyByName, Project } from "@/models/project";
 import TechnologyTag from "./Technology";
-import { technologies } from "@/models/technology";
 import { AnimatePresence, easeOut, motion } from "framer-motion";
+import Card from "./Card";
 
 type Props = {
 	project: Project;
@@ -11,7 +11,8 @@ type Props = {
 
 export default function ProjectContainer({ project }: Props) {
 	return (
-		<motion.a
+		
+			<motion.a
 			initial={{ opacity: 0, transform: "translateY(20px)" }}
 			whileInView={{ opacity: 1, transform: "translateY(0)" }}
 			transition={{ duration: 0.6, ease: "easeOut" }}
@@ -19,7 +20,7 @@ export default function ProjectContainer({ project }: Props) {
 			href={project.link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="backdrop-blur-lg bg-medium border-1 md:border-0 border-fg/20 hover:bg-light transition p-4 md:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center gap-x-8"
+			className="backdrop-blur-lg bg-light/50 border-fg/20 hover:bg-light transition p-4 md:p-6 rounded-2xl grid grid-cols-1 md:grid-cols-2 items-center gap-x-8"
 		>
 			<Image
 				className="rounded-xl aspect[16/9]"
@@ -49,5 +50,7 @@ export default function ProjectContainer({ project }: Props) {
 				</ul>
 			</div>
 		</motion.a>
+		
+		
 	);
 }

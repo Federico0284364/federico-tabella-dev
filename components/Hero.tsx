@@ -49,7 +49,7 @@ export default function HeroSection() {
 			setContentNumber((prev) =>
 				prev >= dynamicContent.length - 2 ? prev : prev + 1
 			);
-		}, 800);
+		}, 600);
 
 		await delay((dynamicContent.length - 1) * 800 + 1500);
 		setContentNumber((prev) => prev + 1);
