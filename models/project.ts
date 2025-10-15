@@ -20,18 +20,18 @@ export function getTechnologyByName(name: string): Technology {
 
 export const projects: Project[] = [
   {
-		name: "Money Tracker",
+		name: "Music release tracker",
 		descriptionEn:
-			"Full-stack app with authentication and database to manage and analyze your expenses, dividing them through different categories.",
+			"Full-stack app with Google authentication and database to track your favorite artists and be notified via e-mail when they release a new record. \nUses Spotify API to retrieve artists' data.",
 		descriptionIt:
-			"App con autenticazione e database per gestire ed analizzare le spese, divise per categoria.",
-		imageSrc: "",
-		date: new Date('July 2025').toLocaleDateString("en-US", {
+			"Un’app full-stack con Google login e database che permette di seguire i tuoi artisti preferiti e ricevere e-mail all'uscita di nuovi album. Dati forniti da Spotify API.",
+		imageSrc: "/next-album2.png",
+		date: new Date('August 2025').toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "short",
 		}),
-		link: '',
-		technologyNames: ["NextJS", "Firebase", "Tailwind" ],
+		link: 'https://latest-albums.vercel.app/',
+		technologyNames: ["NextJS", "TypeScript", "Firebase", "Tailwind" ],
 	},
 	
   {

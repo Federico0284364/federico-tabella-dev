@@ -17,6 +17,10 @@ export const technologies = [
 		imageSrc: "/js.png",
 	},
 	{
+		name: "TypeScript",
+		imageSrc: "/ts.png",
+	},
+	{
 		name: "React",
 		imageSrc: "/react.png",
 	},

@@ -2,7 +2,7 @@ import React, { forwardRef, ReactNode, JSX } from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   icon?: JSX.Element;
   title?: string;

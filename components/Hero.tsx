@@ -28,24 +28,27 @@ const dynamicContentIta = ["Prestazioni", "Precisione", "Intenzione"];
 
 export default function HeroSection() {
 	const [contentNumber, setContentNumber] = useState<number>(-1);
-	const intervalRef = useRef<null | number>(null)
+	const intervalRef = useRef<null | number>(null);
 
 	useEffect(() => {
 		sequence();
 
 		return () => {
-  if (intervalRef.current !== null) {
-		console.log("Cleanup called, interval id:", intervalRef.current);
-    clearInterval(intervalRef.current);
-  }
-};
+			if (intervalRef.current !== null) {
+				console.log(
+					"Cleanup called, interval id:",
+					intervalRef.current
+				);
+				clearInterval(intervalRef.current);
+			}
+		};
 	}, []);
 
 	async function sequence() {
 		await delay(200);
 
 		intervalRef.current = window.setInterval(() => {
-			console.log('interval');
+			console.log("interval");
 			setContentNumber((prev) =>
 				prev >= dynamicContent.length - 2 ? prev : prev + 1
 			);
@@ -78,7 +81,9 @@ export default function HeroSection() {
 						})
 						.map((a, index) => {
 							return (
-								<li className="drop-shadow-2xl drop-shadow-amber-500/1">{dynamicContent[index]}</li>
+								<li key={dynamicContentText[index]} className="drop-shadow-2xl drop-shadow-amber-500/1">
+									{dynamicContent[index]}
+								</li>
 							);
 						})}
 				</motion.ul>
