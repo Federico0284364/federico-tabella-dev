@@ -28,7 +28,7 @@ export default function SkillsSection() {
 				<Card
 					icon={skillIcons.code}
 					className={cardClass}
-					title="Clean, modular and reusable code"
+					title="Clean, modular and reusable code, powered by modern frameworks"
 				>
 					<Button variant="primary">See</Button>
 				</Card>

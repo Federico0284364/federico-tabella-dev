@@ -43,10 +43,15 @@ export default function Home() {
 				</ul>
 			</Section>
 
-			<Section title="Contacts" className="mb-2">
-				<ul>
-					<li></li>
-				</ul>
+			<Section title="Contact me" className="mb-2">
+				<div className="sm:flex sm:justify-between">
+					<Contact
+					className="text-xl text-fg-muted h-8"
+					icon={contactIcons.mail}
+					href="mailto:tabella.federico@gmail.com"
+				>
+					federico.tabella.dev@gmail.com
+				</Contact>
 				<div className="flex gap-2 h-8">
 					<Anchor
 						target="_blank"
@@ -61,15 +66,9 @@ export default function Home() {
 					>
 						{contactIcons.github}
 					</Anchor>
-
-					<Contact
-						className="text-xl text-fg-muted h-8"
-						icon={contactIcons.mail}
-						href="mailto:tabella.federico@gmail.com"
-					>
-						tabella.federico@gmail.com
-					</Contact>
 				</div>
+				</div>
+				
 			</Section>
 
 			<footer className="flex justify-between text-fg-muted items-center">
