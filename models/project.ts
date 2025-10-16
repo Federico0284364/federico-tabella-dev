@@ -26,12 +26,12 @@ export const projects: Project[] = [
 		descriptionIt:
 			"Un’app full-stack con Google login e database che permette di seguire i tuoi artisti preferiti e ricevere e-mail all'uscita di nuovi album. Dati forniti da Spotify API.",
 		imageSrc: "/next-album2.png",
-		date: new Date('August 2025').toLocaleDateString("en-US", {
+		date: new Date('September 2025').toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "short",
 		}),
 		link: 'https://latest-albums.vercel.app/',
-		technologyNames: ["NextJS", "TypeScript", "Firebase", "Tailwind" ],
+		technologyNames: ["NextJS", "TypeScript", "Firebase", "Tailwind", "Spotify Web API" ],
 	},
 	
   {
@@ -55,7 +55,7 @@ export const projects: Project[] = [
 		descriptionIt:
 			"Un gioco a quiz di conoscenza sui Pokémon con due diverse difficoltà.\nDati forniti da PokéAPI.",
 		imageSrc: "/guess-the-pokemon.png",
-		date: new Date('March 2025').toLocaleDateString("en-US", {
+		date: new Date('April 2025').toLocaleDateString("en-US", {
 			year: "numeric",
 			month: "short",
 		}),

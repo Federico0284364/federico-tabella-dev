@@ -8,21 +8,12 @@ import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function SkillsSection() {
-	const carouselRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		if (carouselRef.current) {
-			// eventuale logica futura
-		}
-	}, []);
-
 	const cardClass = "flex flex-col justify-between gap-2 items-start";
 
 	return (
 		<Section title="My skills">
 			<motion.div
 				layout
-				ref={carouselRef}
 				className="text-fg grid grid-cols-1 sm:grid-cols-3 gap-4"
 			>
 				

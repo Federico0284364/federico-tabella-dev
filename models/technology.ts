@@ -48,8 +48,24 @@ export const technologies = [
 		name: "Framer Motion",
 		imageSrc: "/motion.png",
 	},
+	{
+		name: "Material UI",
+		imageSrc: '/material-ui.webp'
+	},
   {
     name: "Redux",
     imageSrc: "/redux.svg"
-  }
+  },
+	{
+		name: 'Docker',
+		imageSrc: '/docker.png'
+	},
+	{
+		name: 'Zustand',
+		imageSrc: '/zustand.webp'
+	},
+	{
+		name: 'Spotify Web API',
+		imageSrc: '/spotify.svg'
+	}
 ];

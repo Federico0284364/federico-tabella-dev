@@ -9,6 +9,8 @@ import { contactIcons } from "../data/contact-icons";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import SkillsSection from "@/components/SkillsSection";
+import { experiences } from "@/models/experience";
+import Experience from "@/components/Experience";
 
 export default function Home() {
 	return (
@@ -16,6 +18,18 @@ export default function Home() {
 			<HeroSection />
 
 			<SkillsSection />
+
+			<Section title="Experience">
+				<ul className="flex flex-col gap-8">
+					{experiences.map((experience, index) => {
+						return (
+							<li key={'experience' + index}>
+								<Experience experience={experience} />
+							</li>
+						);
+					})}
+				</ul>
+			</Section>
 
 			<Section title="Projects">
 				<ul className="flex flex-col gap-8">
