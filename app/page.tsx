@@ -23,7 +23,7 @@ export default function Home() {
 				<ul className="flex flex-col gap-8">
 					{experiences.map((experience, index) => {
 						return (
-							<li key={'experience' + index}>
+							<li key={"experience" + index}>
 								<Experience experience={experience} />
 							</li>
 						);
@@ -43,30 +43,11 @@ export default function Home() {
 				</ul>
 			</Section>
 
-			<Section title="Contact me">
+			<Section title="Contacts" className="mb-2">
 				<ul>
-					<li>
-						<Contact
-							className="text-xl text-fg-muted h-8"
-							icon={contactIcons.mail}
-							href="mailto:tabella.federico@gmail.com"
-						>
-							tabella.federico@gmail.com
-						</Contact>
-					</li>
+					<li></li>
 				</ul>
-			</Section>
-
-			<footer className="flex justify-between text-fg-muted items-center h-15">
-				<p>©{new Date().getFullYear()} Federico Tabella</p>
 				<div className="flex gap-2 h-8">
-					<Anchor
-						target="_blank"
-						href="mailto:tabella.federico@gmail.com"
-					>
-						{contactIcons.mail}
-					</Anchor>
-
 					<Anchor
 						target="_blank"
 						href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
@@ -80,7 +61,19 @@ export default function Home() {
 					>
 						{contactIcons.github}
 					</Anchor>
+
+					<Contact
+						className="text-xl text-fg-muted h-8"
+						icon={contactIcons.mail}
+						href="mailto:tabella.federico@gmail.com"
+					>
+						tabella.federico@gmail.com
+					</Contact>
 				</div>
+			</Section>
+
+			<footer className="flex justify-between text-fg-muted items-center">
+				<p>©{new Date().getFullYear()} Federico Tabella</p>
 			</footer>
 		</>
 	);
