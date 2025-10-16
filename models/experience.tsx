@@ -17,7 +17,7 @@ export const experiences = [
 			year: "numeric",
 			month: "short",
 		}),
-		name: "Ideo Innovation - Implementing React functionalities",
+		name: "Upwork - Ideo Innovation agency",
 		description: 
 			{
 				main:"I worked for Ideo Innovation on Upwork, implementing frontend features to an existing codebase using React, collaborating with a backend developer for setting up client-server interactions.",
