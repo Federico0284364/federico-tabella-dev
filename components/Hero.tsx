@@ -21,7 +21,7 @@ const dynamicContent = [
 		animate={{ y: 0, opacity: 1 }}
 	>
 		<span className="absolute inset-0 bg-amber-500/50 blur-xl rounded-full opacity-20" />
-		<span className="whitespace-nowrap">...while having fun!</span>
+		<span className="whitespace-nowrap">...and a lot of passion!</span>
 	</motion.p>,
 ];
 const dynamicContentIta = ["Prestazioni", "Precisione", "Intenzione"];
