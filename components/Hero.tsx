@@ -9,7 +9,7 @@ import { setDelay as delay } from "@/utils/functions";
 import { twMerge } from "tailwind-merge";
 
 const dynamicTextClass =
-	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary from-dark/0 text-shadow";
+	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary/70 from-dark/0 text-shadow";
 const dynamicContentText = ["Performance", "Precision", "Purpose", "extra"];
 const dynamicContent = [
 	<AnimatedPerformanceText text="Performance" textClass={dynamicTextClass} />,

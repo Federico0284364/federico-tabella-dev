@@ -15,7 +15,7 @@ const Card = forwardRef<HTMLDivElement, Props>(
 			<motion.div
 				ref={ref}
 				className={twMerge(
-					"rounded-2xl bg-medium p-4 shadow-lg transition hover:scale-104 hover:shadow-primary/70",
+					"rounded-2xl bg-medium p-4 shadow-lg transition hover:scale-104 hover:shadow-amber-300/70",
 					className
 				)}
 			>
