@@ -9,7 +9,7 @@ import { setDelay as delay } from "@/utils/functions";
 import { twMerge } from "tailwind-merge";
 
 const dynamicTextClass =
-	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary/40 from-dark/0 text-shadow";
+	"text-xl sm:text-2xl lg:text-4xl bg-gradient-to-b to-primary from-dark/0 text-shadow";
 const dynamicContentText = ["Performance", "Precision", "Purpose", "extra"];
 const dynamicContent = [
 	<AnimatedPerformanceText text="Performance" textClass={dynamicTextClass} />,
@@ -59,9 +59,9 @@ export default function HeroSection() {
 	}
 
 	return (
-		<Section>
+		<Section className="mt-10 mb-40 sm:mb-60">
 			<div className="flex flex-col flex-wrap gap-x-3 items-center relative">
-				<div className="h-80 lg:h-97 rounded-full bg-transparent aspect-square shadow-2xl shadow-amber-300  absolute z-[-10]" />
+				<div className="h-80 lg:h-97 rounded-full bg-transparent aspect-square shadow-2xl shadow-primary  absolute z-[-10]" />
 				<motion.h1
 					initial={{ opacity: 0, transform: "translateY(20px)" }}
 					animate={{ opacity: 1, transform: "translateY(0)" }}
