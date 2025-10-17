@@ -11,10 +11,13 @@ import Card from "@/components/Card";
 import SkillsSection from "@/components/SkillsSection";
 import { experiences } from "@/models/experience";
 import Experience from "@/components/Experience";
+import FadeOnScroll from "@/components/FadeOnScroll";
 
 export default function Home() {
 	return (
 		<>
+			<FadeOnScroll />
+
 			<HeroSection />
 
 			<SkillsSection />
