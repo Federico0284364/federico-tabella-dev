@@ -31,7 +31,7 @@ export default function Home() {
 				</ul>
 			</Section>
 
-			<Section title="Projects">
+			<Section id="projects" title="Projects" className="scroll-mt-12">
 				<ul className="flex flex-col gap-8">
 					{projects.map((project) => {
 						return (
@@ -43,32 +43,35 @@ export default function Home() {
 				</ul>
 			</Section>
 
-			<Section title="Contact me" className="mb-2">
-				<div className="sm:flex sm:justify-between">
+			<Section
+				id="contacts"
+				title="Contact me"
+				className="mb-2 scroll-mt-12"
+			>
+				<div className="flex flex-col sm:flex-row sm:justify-between gap-2">
 					<Contact
-					className="text-xl text-fg-muted h-8"
-					icon={contactIcons.mail}
-					href="mailto:tabella.federico@gmail.com"
-				>
-					federico.tabella.dev@gmail.com
-				</Contact>
-				<div className="flex gap-2 h-8">
-					<Anchor
-						target="_blank"
-						href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
+						className="text-xl text-fg-muted h-8"
+						icon={contactIcons.mail}
+						href="mailto:tabella.federico@gmail.com"
 					>
-						{contactIcons.linkedin}
-					</Anchor>
+						federico.tabella.dev@gmail.com
+					</Contact>
+					<div className="flex gap-2 h-8">
+						<Anchor
+							target="_blank"
+							href="https://www.linkedin.com/in/federico-tabella-2a12b9253/"
+						>
+							{contactIcons.linkedin}
+						</Anchor>
 
-					<Anchor
-						target="_blank"
-						href="https://github.com/Federico0284364"
-					>
-						{contactIcons.github}
-					</Anchor>
+						<Anchor
+							target="_blank"
+							href="https://github.com/Federico0284364"
+						>
+							{contactIcons.github}
+						</Anchor>
+					</div>
 				</div>
-				</div>
-				
 			</Section>
 
 			<footer className="flex justify-between text-fg-muted items-center">

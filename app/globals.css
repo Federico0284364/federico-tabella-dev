@@ -1,69 +1,66 @@
-
-
-
 @import "tailwindcss";
 
 @import "tailwindcss";
 
-html{
-  margin: 0;
-  padding: 0;
+html {
+	margin: 0;
+	padding: 0;
+
+	scroll-behavior: smooth;
 }
 
-
-button{
-  cursor: pointer;
+button {
+	cursor: pointer;
 }
 
 @layer base {
-  :root {
-    --bg-dark: hsl(0, 0%, 8%);
-    --bg: hsl(0, 0%, 10%);
-    --bg-light: hsl(0, 0%, 13%);
-    --text: hsl(212 100% 97%);
-    --text-muted: hsl(212, 47%, 85%);
-    --highlight: hsl(211, 60%, 69%);
-    --border: hsl(212 37% 29%);
-    --border-muted: hsl(211 56% 19%);
-    --primary: hsl(212, 54%, 22%);
-    --secondary: hsl(34 60% 63%);
-    --important: hsl(39, 81, 129);
-    --danger: hsl(9 31% 65%);
-    --warning: hsl(52 22% 56%);
-    --success: hsl(147 21% 58%);
-    --info: hsl(217 34% 65%);
-  }
+	:root {
+		--bg-dark: hsl(0, 0%, 8%);
+		--bg: hsl(0, 0%, 10%);
+		--bg-light: hsl(0, 0%, 13%);
+		--text: hsl(212 100% 97%);
+		--text-muted: hsl(212, 47%, 85%);
+		--highlight: hsl(211, 60%, 69%);
+		--border: hsl(212 37% 29%);
+		--border-muted: hsl(211 56% 19%);
+		--primary: hsl(212, 54%, 22%);
+		--secondary: hsl(34 60% 63%);
+		--important: hsl(39, 81, 129);
+		--danger: hsl(9 31% 65%);
+		--warning: hsl(52 22% 56%);
+		--success: hsl(147 21% 58%);
+		--info: hsl(217 34% 65%);
+	}
 }
 
 /* 2. Esposizione come design token per le utility Tailwind */
 @theme {
-  --color-dark: var(--bg-dark);
-  --color-medium: var(--bg);
-  --color-light: var(--bg-light);
+	--color-dark: var(--bg-dark);
+	--color-medium: var(--bg);
+	--color-light: var(--bg-light);
 
-  --color-fg: var(--text);
-  --color-fg-muted: var(--text-muted);
+	--color-fg: var(--text);
+	--color-fg-muted: var(--text-muted);
 
-  --color-highlight: var(--highlight);
+	--color-highlight: var(--highlight);
 
-  --color-border: var(--border);
-  --color-border-muted: var(--border-muted);
+	--color-border: var(--border);
+	--color-border-muted: var(--border-muted);
 
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-important: var(--important);
-  --color-danger: var(--danger);
-  --color-warning: var(--warning);
-  --color-success: var(--success);
-  --color-info: var(--info);
+	--color-primary: var(--primary);
+	--color-secondary: var(--secondary);
+	--color-important: var(--important);
+	--color-danger: var(--danger);
+	--color-warning: var(--warning);
+	--color-success: var(--success);
+	--color-info: var(--info);
 }
 
-body{
-  background-color: var(--bg-dark);
-  padding: 16px;
-
+body {
+	background-color: var(--bg-dark);
+	padding: 16px;
 }
 
-.text-shadow{
-   text-shadow: 0px 6px 7px var(--bg-light);
+.text-shadow {
+	text-shadow: 0px 6px 7px var(--bg-light);
 }
