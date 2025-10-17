@@ -1,8 +1,8 @@
-import React, { forwardRef, ReactNode, JSX } from "react";
+import React, { forwardRef, ReactNode, JSX, HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 
-type Props = {
+type Props = MotionProps & HTMLAttributes<HTMLDivElement> & {
 	children?: ReactNode;
 	className?: string;
 	icon?: JSX.Element;

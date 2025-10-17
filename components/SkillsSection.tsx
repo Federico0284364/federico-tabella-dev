@@ -18,27 +18,33 @@ export default function SkillsSection() {
 			>
 				
 				<Card
+				key={'Mobile skill'}
+				layout
 					icon={skillIcons.phone}
 					className={cardClass}
 					title="Fully responsive websites with attention to all devices"
 				>
-					<Button variant="primary">See</Button>
+					
 				</Card>
 
 				<Card
+				key={'Code skill'}
+				layout
 					icon={skillIcons.code}
 					className={cardClass}
 					title="Clean, modular and reusable code, powered by modern frameworks"
 				>
-					<Button variant="primary">See</Button>
+					
 				</Card>
 
 				<Card
+				key={'UI skill'}
+				layout
 					icon={skillIcons.stars}
 					className={cardClass}
 					title="Interactive UI realized with smooth and beautiful animations"
 				>
-					<Button variant="primary">See</Button>
+					
 				</Card>
 			</motion.div>
 		</Section>
